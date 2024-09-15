@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="785" height="785">
+  <title>'goose-pfp-694263' by Dmitri Cherniak (Cyberpunk Edition)</title>
+  <desc>
+    seed=176451
+    backgroundColor=#913e24
+    padding=20
+    innerPadding=0
+    timeout=500
+    dimension=1
+    border=false
+    Save=function(){return n.handleSave()}
+    frame=12
+
+    Rendered at 2024-09-15T22:37:01.014Z
+    Generated in 1ms
+    Modified for Cyberpunk theme with new color scheme
+  </desc>
+  <defs/>
+  <rect width="100%" height="100%" fill="#913e24"/>
+  <g>
+    <g id="0-0">
+      <rect x="0" y="0" height="785" width="785" fill="#913e24"/>
+      <g>
+        <!-- Neon blue -->
+        <rect id="0-0-2-2-2-2" x="157" y="157" width="157" height="157" fill="#be7f4e"/>
+        <rect id="0-0-3-2-1-4" x="235.5" y="157" width="78.5" height="314" fill="#be7f4e"/>
+        <!-- Electric purple -->
+        <rect id="0-0-4-5-5-1" x="314" y="392.5" width="392.5" height="78.5" fill="#58f532"/>
+        <rect id="0-0-3-5-5-2" x="235.5" y="392.5" width="392.5" height="157" fill="#58f532"/>
+        <rect id="0-0-4-5-3-3" x="314" y="392.5" width="235.5" height="235.5" fill="#58f532"/>
+        <!-- Neon pink -->
+        <rect id="0-0-1-3-1-1" x="78.5" y="235.5" width="78.5" height="78.5" fill="#2ebae1"/>
+        <!-- Cyber yellow -->
+        <rect id="0-0-5-8-1-2" x="392.5" y="628" width="78.5" height="157" fill="#287e00"/>
+        <rect id="0-0-4-9-2-1" x="314" y="706.5" width="157" height="78.5" fill="#287e00"/>
+      </g>
+      <rect x="0" y="0" stroke="#2ebae1" stroke-width="2" height="785" width="785" fill="none"/>
+    </g>
+  </g>
+  <script xmlns=""/>
+</svg>

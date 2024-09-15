@@ -7,27 +7,43 @@ function readTemplateSVG() {
   return fs.readFileSync(templatePath, 'utf8');
 }
 
+// Function to generate a random color
+function randomColor() {
+  return `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
+}
+
 // Function to generate a random SVG based on the template
 function generateRandomSVG(template) {
+  const colorMap = {
+    backgroundColor: ['#000000', '#1A1A2E'],
+    primaryColor: ['#16F4D0', '#00FFFF'],
+    secondaryColor: ['#B721FF', '#FF00FF'],
+    accentColor1: ['#FF36AB', '#FF69B4'],
+    accentColor2: ['#FEE715', '#FFFF00'],
+    accentColor3: ['#FF0000', '#FF4500'],
+    accentColor4: ['#00FF00', '#32CD32'],
+    accentColor5: ['#1E90FF', '#4169E1'],
+    accentColor6: ['#FFA500', '#FFD700'],
+    accentColor7: ['#8A2BE2', '#9400D3'],
+    accentColor8: ['#20B2AA', '#48D1CC']
+  };
+
   // Generate random colors
-  const backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
-  const neonBlue = `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
-  const electricPurple = `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
-  const neonPink = `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
-  const cyberYellow = `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
+  const colors = Object.fromEntries(
+    Object.entries(colorMap).map(([key, values]) => [key, randomColor()])
+  );
 
   // Replace colors in the template
-  let randomizedSVG = template
-    .replace(/#000000/g, backgroundColor)
-    .replace(/#1A1A2E/g, backgroundColor)
-    .replace(/#16F4D0/g, neonBlue)
-    .replace(/#B721FF/g, electricPurple)
-    .replace(/#FF36AB/g, neonPink)
-    .replace(/#FEE715/g, cyberYellow);
+  let randomizedSVG = template;
+  Object.entries(colorMap).forEach(([key, values]) => {
+    values.forEach(color => {
+      randomizedSVG = randomizedSVG.replace(new RegExp(color, 'g'), colors[key]);
+    });
+  });
 
   // Update the seed and rendering time
   const seed = Math.floor(Math.random() * 1000000);
-  const currentTime = new Date().toString();
+  const currentTime = new Date().toISOString();
   randomizedSVG = randomizedSVG
     .replace(/seed=\d+/, `seed=${seed}`)
     .replace(/Rendered at.*/, `Rendered at ${currentTime}`);
